@@ -4,10 +4,14 @@ import { Row } from 'react-bootstrap'
 import Table from 'react-bootstrap/Table'
 import axios from 'axios'
 import Message from './Message'
+import SimpleModal from './SimpleModal'
 function Users() {
   const postUrl = `/api/users`
   const getUrl = `/api/users`
+  const getAddressUrl = `/api/address`
+
   const [users, setUsers] = useState([])
+  const [show, setShow] = useState(false);
 
   const [name, setName] = useState(undefined)
   const [email, setEmail] = useState(undefined)
@@ -15,6 +19,17 @@ function Users() {
   const [error, setError] = useState(undefined)
   const isValidEmail = function (email) {
     return /^\S+@\S+\.\S+$/.test(email)
+  }
+  const [ modalTitle, setmodalTitle] = useState(undefined)
+  const [modalBody ,setmodalBody] =useState(undefined)
+
+  const showAddressInModal = async function(id){
+    setmodalTitle('Address for userid '+id)
+    
+    const { data } = await axios.get(`${getAddressUrl}/${id}`)
+    setmodalBody(JSON.stringify(data))
+
+    setShow(true)
   }
   const onSubmit = async (e) => {
     e.preventDefault()
@@ -44,15 +59,17 @@ function Users() {
   }, [])
   return (
     <>
+    <SimpleModal title={modalTitle} body={modalBody} show={show} setShow={setShow}/>
       <Message variant="danger">{error}</Message>
       <Row style={{ maxHeight: '500px', overflowY: 'auto' }}>
-        <Table striped bordered hover>
+        <Table  bordered hover>
           <thead>
             <tr>
               <th>#</th>
               <th> Name</th>
               <th>username</th>
               <th>Email</th>
+              <th>Address</th>
             </tr>
           </thead>
           <tbody>
@@ -63,6 +80,10 @@ function Users() {
                   <td>{user.name}</td>
                   <td>{user.username}</td>
                   <td>{user.email}</td>
+                  <td><button onClick={(e)=>{
+                    e.preventDefault()
+                    showAddressInModal(user.id)
+                  }}>Address</button></td>
                 </tr>
               )
             })}

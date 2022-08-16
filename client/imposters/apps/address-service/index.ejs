@@ -1,0 +1,38 @@
+{
+    "name": "address_service",
+    "protocol": "http",
+    "port": "<%- new URL(process.env.ADDRESS_MOCK_API_BASE).port %>",
+    "defaultResponse": {
+      "statusCode": 600,
+      "body": "Default response: something in this imposter might not be configured correctly"
+    },
+    "stubs": [
+            
+      {
+        "predicates": [
+          {
+            "and": [
+              {
+                "matches": {
+                  "method": "GET",
+                  "path": "/api/address/\\d+"
+                }
+              }
+            ]
+          }
+        ],
+        "responses": [
+          {
+            "is": {
+              "statusCode": 200,
+              "headers": {
+                "Content-Type": "application/json; charset=utf-8"
+              },
+              "body": <%include ../../data/address.json%>
+            }
+          }
+        ]
+      }
+      
+    ]
+  }

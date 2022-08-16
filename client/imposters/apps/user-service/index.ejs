@@ -2,7 +2,6 @@
     "name": "user_service",
     "protocol": "http",
     "port": "<%- new URL(process.env.MOCK_API_BASE_URL).port %>",
-    "mode": "binary",
     "defaultResponse": {
       "statusCode": 600,
       "body": "Default response: something in this imposter might not be configured correctly"
@@ -82,7 +81,7 @@
         "responses": [
           {
             "is": {
-              "statusCode": 200,
+              "statusCode": 201,
               "headers": {
                 "Content-Type": "application/json; charset=utf-8"
               },

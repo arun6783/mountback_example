@@ -1,0 +1,5 @@
+{"level":"warn","message":"[mb:3001] Running with --allowInjection set. See http://localhost:3001/docs/security for security info","timestamp":"2022-08-16T12:54:10.428Z"}
+{"level":"info","message":"[mb:3001] mountebank v2.7.0 now taking orders - point your browser to http://localhost:3001/ for help","timestamp":"2022-08-16T12:54:10.445Z"}
+{"level":"info","message":"[mb:3001] PUT /imposters","timestamp":"2022-08-16T12:54:10.550Z"}
+{"level":"info","message":"[http:3002 user_service] Open for business...","timestamp":"2022-08-16T12:54:10.662Z"}
+{"level":"info","message":"[http:3003 address_service] Open for business...","timestamp":"2022-08-16T12:54:10.664Z"}

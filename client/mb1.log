@@ -1,0 +1,10 @@
+{"level":"info","message":"[mb:3001] mountebank v2.7.0 now taking orders - point your browser to http://localhost:3001/ for help","timestamp":"2022-08-16T12:52:55.191Z"}
+{"level":"warn","message":"[mb:3001] Running with --allowInjection set. See http://localhost:3001/docs/security for security info","timestamp":"2022-08-16T12:52:55.174Z"}
+{"level":"info","message":"[mb:3001] PUT /imposters","timestamp":"2022-08-16T12:52:55.297Z"}
+{"level":"info","message":"[http:3002 user_service] Open for business...","timestamp":"2022-08-16T12:52:55.390Z"}
+{"level":"info","message":"[http:3003 address_service] Open for business...","timestamp":"2022-08-16T12:52:55.392Z"}
+{"level":"info","message":"[http:3002 user_service] ::ffff:127.0.0.1:54398 => GET /api/users","timestamp":"2022-08-16T12:53:03.190Z"}
+{"level":"info","message":"[http:3002 user_service] ::ffff:127.0.0.1:54399 => GET /api/users","timestamp":"2022-08-16T12:53:03.205Z"}
+{"level":"info","message":"[http:3003 address_service] ::ffff:127.0.0.1:54402 => GET /api/address/2","timestamp":"2022-08-16T12:53:05.137Z"}
+{"level":"info","message":"[http:3003 address_service] no predicate match, using default response","timestamp":"2022-08-16T12:53:05.139Z"}
+{"level":"info","message":"[mb:3001] Adios - see you soon?","timestamp":"2022-08-16T12:54:03.055Z"}

@@ -6,8 +6,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "start": "webpack serve --mode development",
-    "start:dev": "cross-env FORCE_COLOR=1 npm-run-all -p mb:start start",
-    "mb:start": "cross-env NODE_OPTIONS=\"--require dotenv/config\" npm run mb:start:internal",
+    "start:mb": "cross-env NODE_OPTIONS=\"--require dotenv/config\" FORCE_COLOR=1 npm-run-all -p mb:start:internal start",    
     "mb:start:internal": "cross-env-shell \"mb start --port $MOUNTEBANK_PORT --pidfile mb.$MOUNTEBANK_PORT.pid --allowInjection --localOnly true --configfile ./imposters/index.ejs --debug --loglevel $MOUNTEBANK_LOG_LEVEL\""
     },
   "keywords": [],

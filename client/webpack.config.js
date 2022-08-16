@@ -29,8 +29,11 @@ const port = env.APP_PORT|| 8085
       port:port,
       
       proxy:  {
-        '/api': {
+        '/api/users': {
           target: env.USE_MOCK_API ==='true' ? env.MOCK_API_BASE_URL : 'http://localhost:3000',
+        },
+        '/api/address': {
+          target: env.USE_MOCK_API ==='true' ? env.ADDRESS_MOCK_API_BASE : 'http://localhost:3000',
         }
       }
     },
