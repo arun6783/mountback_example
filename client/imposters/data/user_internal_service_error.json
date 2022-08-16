@@ -1,0 +1,20 @@
+{
+  "confirmMessage":{
+     "resourceMessages":null,
+     "processMessages":[
+        {
+           "userMessage":{
+              "messageTxt":"message 1"
+           }
+        },
+         {
+           "userMessage":{
+              "messageTxt":"message 2"
+           }
+        }
+     ],
+     "protocolStatusCode":{
+        "codeValue":"500"
+     }
+  }
+}
