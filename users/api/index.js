@@ -24,4 +24,7 @@ app.post('/api/users', function (req, res) {
   users.push({ id, name, email, username: userName })
   return res.status(201).send(users)
 })
+
+app.get('/api/users/')
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
