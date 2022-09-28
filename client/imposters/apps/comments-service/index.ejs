@@ -1,0 +1,58 @@
+{
+    "name": "comments_service",
+    "protocol": "http",
+    "port": "<%- new URL(process.env.COMMENTS_API_BASE_URL).port %>",
+    "mode": "binary",
+    "defaultResponse": {
+      "statusCode": 600,
+      "body": "Default response: something in this imposter might not be configured correctly"
+    },
+    "stubs":[
+    {
+      "predicates": [
+        {
+          "equals": {
+            "method": "POST",
+            "path": "/api/post/0784367f/comments"
+          }
+        }
+      ],
+      "responses": [
+        
+        {
+          "is": {
+            "statusCode": 400,            
+            "body": <%include ./data/validation_error.json%>
+          }
+        }
+      ]
+    },
+    {
+      "predicates": [
+        {
+          "equals": {
+            "method": "POST",
+            "path": "/api/post/cc3a56b5/comments"
+          }
+        }
+      ],
+      "responses": [
+        {
+          "is": {
+            "statusCode": 201,
+            "body": "Successfully created new comment"
+          }
+        },
+        {
+          "is": {
+            "statusCode": 500,
+            "headers": {
+              "Content-Type": "application/xml"
+            },
+            "body": "internal error"
+          }
+        }
+      ]
+    }
+  ]
+  }

@@ -1,0 +1,5 @@
+{
+    "validationMessages": [
+      "The key you specified for this record is already assigned to another record. You can either change the existing record, or add a new record with a different key."
+    ]
+  }

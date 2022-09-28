@@ -1,0 +1,25 @@
+{
+  "cc3a56b5": {
+    "id": "cc3a56b5",
+    "title": "first post",
+    "comments": [
+      {
+        "id": "48cc552e",
+        "content": "comment one in first post"
+      }
+    ]
+  },
+  "0784367f": {
+    "id": "0784367f",
+    "title": "second post",
+    "comments": [ {
+      "id": "48cc152e",
+      "content": "comment one in second post"
+    }]
+  },
+  "48b82fb9": {
+    "id": "48b82fb9",
+    "title": "third post",
+    "comments": []
+  }
+}

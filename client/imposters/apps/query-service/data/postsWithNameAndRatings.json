@@ -1,0 +1,30 @@
+{
+  "cc3a56b5": {
+    "id": "cc3a56b5",
+    "title": "first post",
+    "name": "Secondary Steak",
+    "comments": [
+      {
+        "id": "48cc552e",
+        "content": "comment one in first post",
+        "status": "approved",
+        "ratings": {
+          "like": 0,
+          "dislike": 0
+        }
+      }
+    ]
+  },
+  "0784367f": {
+    "id": "0784367f",
+    "title": "second post",
+    "name": "Colossal Painting",
+    "comments": []
+  },
+  "48b82fb9": {
+    "id": "48b82fb9",
+    "title": "third post",
+    "name": "Dramatic Hand",
+    "comments": []
+  }
+}

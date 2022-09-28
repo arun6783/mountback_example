@@ -1,0 +1,46 @@
+{
+    "name": "query_service",
+    "protocol": "http",
+    "port": "<%- new URL(process.env.QUERY_API_BASE_URL).port %>",
+    "mode": "binary",
+    "defaultResponse": {
+      "statusCode": 600,
+      "body": "Default response: something in this imposter might not be configured correctly"
+    },
+    "stubs": [      
+      {
+        "predicates": [
+          {
+            "and": [
+              {
+                "equals": {
+                  "method": "GET",
+                  "path": "/api/query"
+                }
+              }
+            ]
+          }
+        ],
+        "responses": [
+          {
+            "is": {
+              "statusCode": 200,
+              "headers": {
+                "Content-Type": "application/json; charset=utf-8"
+              },
+              "body": <%include ./data/empty.json%>
+            }
+          },
+          {
+            "is": {
+              "statusCode": 200,
+              "headers": {
+                "Content-Type": "application/json; charset=utf-8"
+              },
+              "body": <%include ./data/firstPost.json%>
+            }
+          }
+        ]
+      }
+    ]
+  }

@@ -1,0 +1,57 @@
+{
+    "name": "posts_service",
+    "protocol": "http",
+    "port": "<%- new URL(process.env.POSTS_API_BASE_URL).port %>",
+    "useCORS": true,
+    "defaultResponse": {
+      "statusCode": 600,
+      "body": "Default response: something in this imposter might not be configured correctly"
+    },
+    "stubs":[
+        {
+            "predicates":[
+               { 
+                   "and":[
+                        {
+                            "equals":{
+                            "method":"POST",
+                            "path":"/api/posts"
+                            }
+                        },
+                        {
+                            "contains":{
+                            "body":{ "title":"arun" }   
+                            }
+                        }
+                    ]
+                } 
+            ],
+            "responses":[
+                {
+                    "is":{
+                        "statusCode":201,                        
+                        "body":"successfully created new post"
+                    }
+                },
+                {
+                    "is":{
+                        "statusCode":400,
+                        "headers":{
+                        "Content-Type":"application/xml"
+                        },
+                        "body":"title already exists"
+                    }
+                }
+            ]
+        },
+        {
+            "responses":[
+                {
+                    "is":{
+                        "statusCode":404
+                    }
+                }
+            ]
+        }
+    ]
+  }
